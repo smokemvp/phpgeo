@@ -1,3 +1,19 @@
+```
+23. PHP Geo – 地理位置定位库
+
+phpgeo是一个简单的库，用于计算地理坐标之间高精度距离。例如：
+
+use Location\Coordinate;use Location\Distance\Vincenty;
+$coordinate1 = new Coordinate(19.820664, -155.468066); // Mauna Kea Summit 茂纳凯亚峰
+$coordinate2 = new Coordinate(20.709722, -156.253333); // Haleakala Summit
+$calculator = new Vincenty();
+
+// returns 128130.850 (meters; ≈128 kilometers)
+$distance = $calculator->getDistance($coordinate1, $coordinate2); 
+它将在使用地理位置数据的app里出色工作。你可以试译 HTML5 Location API，雅虎的API（或两者都用，我们在weather web app tutorial中这样做了），来获取坐标。
+
+
+```
 # phpgeo - A Simple Geo Library for PHP
 
 phpgeo provides abstractions to geographical coordinates (including support for different ellipsoids) and allows you to calculate geographical distances between coordinates with high precision.
